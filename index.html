@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mashiburi, Be My Valentine 💖</title>
+  <meta name="description" content="A Valentine surprise for Mashiburi" />
+  <style>
+    :root {
+      --pink: #ff4d6d;
+      --soft-pink: #fff0f5;
+      --red: #e63946;
+      --dark: #2b2b2b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #fff0f5, #ffe6eb);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: var(--pink);
+      margin-bottom: 16px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    .heart {
+      font-size: 3rem;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* BUTTONS */
+    .btns {
+      margin-top: 30px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 14px 28px;
+      border-radius: 30px;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background: var(--pink);
+      color: white;
+      margin-right: 10px;
+    }
+
+    #noBtn {
+      background: #ccc;
+      color: #555;
+      position: absolute;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(255,77,109,0.4);
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .photo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .photo-row img {
+      width: 260px;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .caption {
+      max-width: 400px;
+      font-size: 1.05rem;
+    }
+
+    /* YES ANIMATION */
+    #celebrate {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .confetti {
+      font-size: 2rem;
+      animation: rain 1.5s infinite;
+    }
+
+    @keyframes rain {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(30px); }
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .photo-row { justify-content: center; }
+      .caption { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / QUESTION -->
+  <section id="ask">
+    <div>
+      <div class="heart">❤️</div>
+      <h1>Mashiburi 💕</h1>
+      <p>I'm pleased we're going for our <strong>2nd Valentine’s</strong> together… you joining me?</p>
+
+      <div class="btns">
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">Yes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORY GALLERY -->
+  <section>
+    <div class="gallery">
+      <div class="photo-row">
+        <img src="IMG_0190.jpg" alt="Mashiburi by the window" />
+        <div class="caption">This is the look I fell for — calm, confident, and quietly powerful. Every room you’re in feels warmer just because you’re there.</div>
+      </div>
+
+      <div class="photo-row">
+        <img src="IMG_7906.JPEG" alt="Mashiburi glowing in the light" />
+        <div class="caption">You don’t try to shine — you just do. The kind of beauty that’s effortless, honest, and impossible to ignore.</div>
+      </div>
+
+      <div class="photo-row">
+        <img src="IMG_7881.JPEG" alt="Mashiburi smile" />
+        <div class="caption">Every version of you is my favorite. Soft moments, strong moments, and everything in between — I choose you, always.</div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YES CELEBRATION -->
+  <section id="celebrate">
+    <h2>She said YES!!! 💘</h2>
+    <p>Here’s to our second Valentine’s — and many more chapters written together.</p>
+    <div class="confetti">🎉💖🎉💖🎉</div>
+  </section>
+
+  <footer>
+    Made with love — just for Mashiburi ❤️
+  </footer>
+
+  <!-- LOVE LETTER MODAL -->
+  <div id="letterModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); align-items:center; justify-content:center; z-index:999;">
+    <div style="background:white; padding:30px; border-radius:20px; max-width:500px; animation:fadeIn 0.8s ease;">
+      <h2 style="color:#ff4d6d;">My Letter to You 💌</h2>
+      <p>Mashiburi, preciate you choosing me, for growing with me, and for making this journey feel intentional. Our second Valentine’s is just another chapter.</p>
+      <button onclick="closeLetter()" style="margin-top:20px; padding:10px 20px; border:none; border-radius:20px; background:#ff4d6d; color:white;">Close ❤️</button>
+    </div>
+  </div>
+
+  <!-- FLOATING HEARTS -->
+  <div id="hearts"></div>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- COUNTDOWN -->
+  <section style="background:#fff0f5;">
+    <h2>Counting down to Valentine’s Day 💕</h2>
+    <p id="countdown" style="font-size:1.3rem;"></p>
+  </section>
+
+  <script>
+    // Floating hearts
+    const heartContainer = document.getElementById('hearts');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '❤️';
+      heart.style.position = 'fixed';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = '-20px';
+      heart.style.fontSize = '20px';
+      heart.style.animation = 'floatUp 4s linear forwards';
+      heartContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 600);
+
+    // Keyframes
+    const style = document.createElement('style');
+    style.innerHTML = '@keyframes floatUp { to { transform: translateY(-120vh); opacity:0; } }';
+    document.head.appendChild(style);
+
+    // Countdown
+    const countdownEl = document.getElementById('countdown');
+    const valentine = new Date(new Date().getFullYear(), 1, 14);
+    setInterval(() => {
+      const now = new Date();
+      const diff = valentine - now;
+      const days = Math.floor(diff / (1000*60*60*24));
+      countdownEl.textContent = days + ' days to go ❤️';
+    }, 1000);
+
+    // Letter + music on YES
+    yesBtn.addEventListener('click', () => {
+      document.getElementById('bgMusic').play();
+      setTimeout(() => {
+        document.getElementById('letterModal').style.display = 'flex';
+      }, 1200);
+    });
+
+    function closeLetter() {
+      document.getElementById('letterModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
